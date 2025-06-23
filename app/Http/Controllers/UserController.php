@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\DTOS\UserDTO;
-use App\Service\UserService;
+use App\Http\Service\UserService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Number;
 
 class UserController extends Controller
 {
