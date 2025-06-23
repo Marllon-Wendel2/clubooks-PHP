@@ -7,4 +7,6 @@ Route::prefix('user')->group(function () {
     Route::post('/create', [UserController::class, 'createUser']);
     Route::get('', [UserController::class, 'getAllUsers']);
     Route::get('/{id}', [UserController::class, 'getUserById']);
+    Route::patch('/{id}', [UserController::class, 'updateUserById']);
+    Route::delete('/{id}', [UserController::class, 'deleteUserById']);
 });

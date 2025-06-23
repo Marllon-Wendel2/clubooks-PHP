@@ -56,5 +56,23 @@ class UserController extends Controller
             ]
             ]);
     }
+
+    public function updateUserById(Request $request, int $id) {
+        $result = $this->userService->updateUserById($id, $request->only(['name', 'email']));
+
+        return response()->json([
+            'message' => 'Atualizado com sucesso',
+            'result' => $result,
+        ]);
+    }
+
+    public function deleteUserById(int $id) {
+        $result = $this->userService->deleteUserById($id);
+
+        return response()-> json([
+            'message' => 'Deletado com sucesso',
+            'result' => $result,
+        ]);
+    }
 }
 ?>

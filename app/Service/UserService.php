@@ -35,5 +35,21 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
             return User::findOrFail($id);
         }
 
+        public function updateUserById(int $id, array $data) {
+            $user = User::find($id);
+
+            if (!$user) {
+                throw new \Exception('Usário com id $id não encontrado.');
+            }
+
+            return $user->update($data);
+        }
+
+        public function deleteUserById(int $id) {
+            $user = User::findOrFail($id);
+
+            return $user->delete();
+        }
+
     }
 ?>
